@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#43208c">
+<title>আমার সুরের ভুবন</title>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" sizes="192x192" href="icons/pallabi-icon-192.png">
+<link rel="apple-touch-icon" href="icons/pallabi-icon-192.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brandmark"><img src="icons/pallabi-icon-192.png" alt="পল্লবীর ছবি" style="width:100%;height:100%;object-fit:cover;border-radius:inherit"></div>
+  <div><h1>আমার সুরের ভুবন</h1><p>শিখি • বাজাই • লিখি • গাই</p></div>
+  <span id="network" class="net">পরীক্ষা হচ্ছে…</span>
+</header>
+<main>
+  <section class="welcome panel">
+    <h2>সুরের যাত্রায় স্বাগতম 🎶</h2>
+    <p>হারমোনিয়াম অনুশীলন, রাগ-তাল শেখা, স্বরলিপি লেখা ও নিজের গান সংরক্ষণের প্রথম সংস্করণ।</p>
+    <div class="quick"><button data-open="harmonium">🎹 হারমোনিয়াম</button><button data-open="notebook">📝 স্বরলিপির খাতা</button><button data-open="library">🎧 আমার গান</button></div>
+  </section>
+
+  <nav class="tabs" aria-label="প্রধান মেনু">
+    <button class="tab active" data-page="home">🏠 হোম</button>
+    <button class="tab" data-page="harmonium">🎹 হারমোনিয়াম</button>
+    <button class="tab" data-page="learn">🎼 রাগ-তাল</button>
+    <button class="tab" data-page="notebook">📝 স্বরলিপি</button>
+    <button class="tab" data-page="library">🎧 গান ও রেকর্ড</button>
+    <button class="tab" data-page="backup">💾 ব্যাকআপ</button>
+  </nav>
+
+  <section id="home" class="page active">
+    <div class="grid">
+      <article class="tile purple" data-goto="harmonium"><span>🎹</span><h3>ভার্চুয়াল হারমোনিয়াম</h3><p>সা রে গা মা বাজিয়ে অনুশীলন</p></article>
+      <article class="tile blue" data-goto="learn"><span>🎼</span><h3>শাস্ত্রীয় সংগীত</h3><p>রাগ, তাল, লয় ও আলংকার</p></article>
+      <article class="tile orange" data-goto="notebook"><span>✍️</span><h3>স্বরলিপির খাতা</h3><p>লিখুন, সেভ করুন, পরে খুলুন</p></article>
+      <article class="tile pink" data-goto="library"><span>🎤</span><h3>গান ও রেকর্ড</h3><p>নিজের অডিও যোগ করুন ও রেকর্ড করুন</p></article>
+    </div>
+    <div class="panel"><h3>এই সংস্করণে</h3><ul><li>অফলাইনে খোলা যায় এমন মূল অ্যাপ</li><li>সুর তৈরির জন্য ভার্চুয়াল কিবোর্ড</li><li>স্বরলিপি ও সেটিংস এই ডিভাইসে সংরক্ষণ</li><li>ব্যাকআপ ও পুনরুদ্ধার</li></ul><p class="muted">এটি প্রাথমিক সংস্করণ। অনলাইন গান অনুসন্ধান, অনুমোদিত ডাউনলোড এবং পূর্ণ কারাওকে পরের ধাপে যোগ করা হবে।</p></div>
+  </section>
+
+  <section id="harmonium" class="page">
+    <div class="panel">
+      <h2>🎹 ভার্চুয়াল হারমোনিয়াম</h2>
+      <p class="muted">যে কোনো স্বরে চাপ দিন—ব্রাউজারে সুর তৈরি হবে। প্রথমবার শব্দ চালু করতে একটি স্বর চাপুন।</p>
+      <div class="controls">
+        <label>সা-এর ভিত্তি
+          <select id="baseNote"><option value="C">C (সা)</option><option value="D">D (সা)</option><option value="E">E (সা)</option><option value="F">F (সা)</option><option value="G">G (সা)</option><option value="A">A (সা)</option><option value="Bb">B♭ (সা)</option></select>
+        </label>
+        <label>অক্টেভ
+          <select id="octave"><option value="3">নিচু</option><option value="4" selected>মধ্য</option><option value="5">উঁচু</option></select>
+        </label>
+        <label>শব্দ
+          <select id="tone"><option value="reed">হারমোনিয়াম-ধাঁচের</option><option value="sine">মৃদু</option></select>
+        </label>
+      </div>
+      <div id="keys" class="keys"></div>
+      <div class="sargam-line" id="lastNote">একটি স্বর বাজান</div>
+      <div class="buttonrow"><button id="playScale" class="primary">▶ সা রে গা মা অনুশীলন</button><button id="stopAudio" class="secondary">■ থামুন</button></div>
+      <p class="small muted">নোট: এটি ডিজিটাল সুর-জেনারেটর; বাস্তব হারমোনিয়ামের স্যাম্পল-শব্দ পরবর্তী সংস্করণে যোগ করা যাবে।</p>
+    </div>
+  </section>
+
+  <section id="learn" class="page">
+    <div class="panel"><h2>🎼 রাগ, তাল ও লয়</h2><p class="muted">শেখার জন্য প্রাথমিক তথ্য। প্রতিটি রাগের পরিবেশনা শিল্পী ও ঘরানা অনুযায়ী ভিন্ন হতে পারে।</p>
+      <div class="controls"><label>বিষয় <select id="learnType"><option value="raga">রাগ</option><option value="taal">তাল</option><option value="lay">লয়</option><option value="practice">স্বর অনুশীলন</option></select></label></div>
+      <div id="lessonList" class="lesson-list"></div>
+      <div class="panel inset"><h3>🥁 তাল অনুশীলন</h3><div class="controls"><label>তাল নির্বাচন <select id="taalSelect"><option value="teentaal">তিনতাল — ১৬ মাত্রা</option><option value="dadra">দাদরা — ৬ মাত্রা</option><option value="keherwa">কাহারবা — ৮ মাত্রা</option><option value="ektal">একতাল — ১২ মাত্রা</option></select></label><label>গতি (BPM) <input id="bpm" type="number" min="30" max="240" value="80"></label></div><div class="beat-display" id="beatDisplay">তাল শুরু করতে বোতাম চাপুন</div><div class="buttonrow"><button class="primary" id="startBeat">▶ তাল শুরু</button><button class="secondary" id="stopBeat">■ থামুন</button></div></div>
+    </div>
+  </section>
+
+  <section id="notebook" class="page">
+    <div class="panel"><h2>📝 আমার স্বরলিপির খাতা</h2><p class="muted">আপনার লেখা এই ডিভাইসের ব্রাউজারে সেভ হবে। নিয়মিত ব্যাকআপ রাখুন।</p>
+      <form id="noteForm">
+        <input type="hidden" id="noteId">
+        <label>গানের / স্বরলিপির নাম<input id="noteTitle" required maxlength="120" placeholder="যেমন: আমার নতুন গান"></label>
+        <div class="formrow"><label>ভাষা<select id="noteLanguage"><option>বাংলা</option><option>হিন্দি</option><option>ইংরেজি</option><option>শাস্ত্রীয়</option><option>অন্যান্য</option></select></label><label>রাগ / স্কেল<input id="noteRaga" placeholder="যেমন: ভূপালী / C"></label></div>
+        <label>গানের কথা ও স্বরলিপি<textarea id="noteText" rows="7" required placeholder="গানের কথা লিখুন…&#10;স্বর: সা রে গা মা | পা ধা নি সা"></textarea></label>
+        <label>তাল / লয়<input id="noteTaal" placeholder="যেমন: দাদরা, মধ্য লয়"></label>
+        <div class="buttonrow"><button class="primary" type="submit">💾 স্বরলিপি সেভ</button><button class="secondary" type="button" id="clearNote">নতুন লেখা</button></div>
+      </form>
+    </div>
+    <div class="panel"><div class="section-head"><h3>সংরক্ষিত স্বরলিপি</h3><input id="noteSearch" placeholder="নাম দিয়ে খুঁজুন"></div><div id="noteList"></div></div>
+  </section>
+
+  <section id="library" class="page">
+    <div class="panel"><h2>🎧 আমার গান ও রেকর্ডিং</h2><p class="muted">নিজের অডিও ফাইল যোগ করে এই ডিভাইসে চালান। ব্রাউজারের অনুমতি চাইলে মাইক্রোফোন ব্যবহারের অনুমতি দিন।</p>
+      <label class="filepick">＋ অডিও ফাইল যোগ করুন<input id="audioFiles" type="file" accept="audio/*" multiple></label>
+      <div id="audioList" class="audio-list"></div>
+    </div>
+    <div class="panel"><h3>🎤 নিজের কণ্ঠ রেকর্ড</h3><p id="micStatus" class="muted">রেকর্ড করতে মাইক্রোফোন অনুমতি লাগবে। সাধারণত HTTPS বা localhost-এ কাজ করে; file:// থেকে সীমাবদ্ধতা থাকতে পারে।</p><div class="buttonrow"><button id="recordStart" class="primary">● রেকর্ড শুরু</button><button id="recordStop" class="secondary" disabled>■ রেকর্ড থামান</button></div><div id="recordings" class="audio-list"></div></div>
+    <div class="panel"><h3>🌐 অনলাইন গান</h3><p>অনলাইনে গান শোনার বা ডাউনলোড করার সুবিধা পরের ধাপে নির্ভরযোগ্য, অনুমোদিত উৎসের সঙ্গে যুক্ত করা হবে। এই সংস্করণে নিজের অডিও ফাইল যোগ করে অফলাইনে শুনতে পারবেন।</p></div>
+  </section>
+
+  <section id="backup" class="page">
+    <div class="panel"><h2>💾 ব্যাকআপ ও পুনরুদ্ধার</h2><p>স্বরলিপি ও অ্যাপের ছোট সেটিংস JSON ফাইলে রাখুন। অডিও ফাইল আলাদা করে আপনার কম্পিউটার/ফোনে রাখবেন।</p><div class="buttonrow"><button id="exportData" class="primary">⬇ ব্যাকআপ ডাউনলোড</button><label class="filepick">⬆ ব্যাকআপ ফিরিয়ে আনুন<input id="importData" type="file" accept="application/json,.json"></label></div><p id="backupStatus" class="muted"></p><div class="warning"><strong>সতর্কতা:</strong> পুনরুদ্ধার করলে বর্তমান স্বরলিপি প্রতিস্থাপিত হতে পারে। আগে ব্যাকআপ ডাউনলোড করে রাখুন।</div></div>
+  </section>
+</main>
+<footer>আমার সুরের ভুবন · প্রাথমিক সংস্করণ ০.১ · আপনার সুর, আপনার খাতা</footer>
+<script src="app.js"></script>
+</body>
+</html>
