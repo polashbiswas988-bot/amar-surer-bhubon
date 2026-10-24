@@ -1,12 +1,13 @@
 {
   "name": "আমার সুরের ভুবন",
   "short_name": "সুরের ভুবন",
-  "description": "হারমোনিয়াম, রাগ-তাল ও স্বরলিপি শেখার অ্যাপ",
-  "lang": "bn",
-  "start_url": "./index.html",
+  "description": "হারমোনিয়াম, বাঁশি-সদৃশ সুর, বীণা-সদৃশ সুর ও রাগ শেখার বাংলা অ্যাপ",
+  "start_url": "./",
+  "scope": "./",
   "display": "standalone",
-  "background_color": "#f7f5fc",
-  "theme_color": "#43208c",
+  "background_color": "#f8f6fc",
+  "theme_color": "#4d347c",
+  "lang": "bn",
   "icons": [
     {
       "src": "icons/pallabi-icon-192.png",

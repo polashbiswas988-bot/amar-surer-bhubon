@@ -2,104 +2,116 @@
 <html lang="bn">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#43208c">
-<title>আমার সুরের ভুবন</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#4d347c">
+<meta name="description" content="আমার সুরের ভুবন — হারমোনিয়াম, বাঁশি, বীণা ও রাগ শেখার বাংলা অ্যাপ">
 <link rel="manifest" href="manifest.json">
-<link rel="icon" type="image/png" sizes="192x192" href="icons/pallabi-icon-192.png">
-<link rel="apple-touch-icon" href="icons/pallabi-icon-192.png">
+<link rel="icon" href="icons/pallabi-icon-192.png">
 <link rel="stylesheet" href="style.css">
+<title>আমার সুরের ভুবন</title>
 </head>
 <body>
 <header class="top">
-  <div class="brandmark"><img src="icons/pallabi-icon-192.png" alt="পল্লবীর ছবি" style="width:100%;height:100%;object-fit:cover;border-radius:inherit"></div>
-  <div><h1>আমার সুরের ভুবন</h1><p>শিখি • বাজাই • লিখি • গাই</p></div>
-  <span id="network" class="net">পরীক্ষা হচ্ছে…</span>
+  <div class="brand"><div class="logo">🎵</div><div><h1>আমার সুরের ভুবন</h1><p>বাজাও • শোনো • শেখো</p></div></div>
+  <div class="top-actions"><span id="netState" class="pill">পরীক্ষা হচ্ছে…</span><button id="installBtn" class="secondary hidden">📲 ইনস্টল</button></div>
 </header>
 <main>
   <section class="welcome panel">
-    <h2>সুরের যাত্রায় স্বাগতম 🎶</h2>
-    <p>হারমোনিয়াম অনুশীলন, রাগ-তাল শেখা, স্বরলিপি লেখা ও নিজের গান সংরক্ষণের প্রথম সংস্করণ।</p>
-    <div class="quick"><button data-open="harmonium">🎹 হারমোনিয়াম</button><button data-open="notebook">📝 স্বরলিপির খাতা</button><button data-open="library">🎧 আমার গান</button></div>
+    <div><h2>সুরের সঙ্গে শেখা শুরু হোক</h2><p>৩৭টি কী, তিনটি অক্টেভ, বাদ্যযন্ত্রের সুর এবং রাগের পাঠ—সব এক জায়গায়।</p></div>
+    <div class="welcome-note">🎹 🎶 🪈</div>
   </section>
 
   <nav class="tabs" aria-label="প্রধান মেনু">
-    <button class="tab active" data-page="home">🏠 হোম</button>
-    <button class="tab" data-page="harmonium">🎹 হারমোনিয়াম</button>
-    <button class="tab" data-page="learn">🎼 রাগ-তাল</button>
-    <button class="tab" data-page="notebook">📝 স্বরলিপি</button>
-    <button class="tab" data-page="library">🎧 গান ও রেকর্ড</button>
+    <button class="tab active" data-page="instrument">🎹 বাদ্যযন্ত্র</button>
+    <button class="tab" data-page="ragas">🎼 রাগ শেখা</button>
+    <button class="tab" data-page="notebook">📒 স্বরলিপি</button>
     <button class="tab" data-page="backup">💾 ব্যাকআপ</button>
   </nav>
 
-  <section id="home" class="page active">
-    <div class="grid">
-      <article class="tile purple" data-goto="harmonium"><span>🎹</span><h3>ভার্চুয়াল হারমোনিয়াম</h3><p>সা রে গা মা বাজিয়ে অনুশীলন</p></article>
-      <article class="tile blue" data-goto="learn"><span>🎼</span><h3>শাস্ত্রীয় সংগীত</h3><p>রাগ, তাল, লয় ও আলংকার</p></article>
-      <article class="tile orange" data-goto="notebook"><span>✍️</span><h3>স্বরলিপির খাতা</h3><p>লিখুন, সেভ করুন, পরে খুলুন</p></article>
-      <article class="tile pink" data-goto="library"><span>🎤</span><h3>গান ও রেকর্ড</h3><p>নিজের অডিও যোগ করুন ও রেকর্ড করুন</p></article>
-    </div>
-    <div class="panel"><h3>এই সংস্করণে</h3><ul><li>অফলাইনে খোলা যায় এমন মূল অ্যাপ</li><li>সুর তৈরির জন্য ভার্চুয়াল কিবোর্ড</li><li>স্বরলিপি ও সেটিংস এই ডিভাইসে সংরক্ষণ</li><li>ব্যাকআপ ও পুনরুদ্ধার</li></ul><p class="muted">এটি প্রাথমিক সংস্করণ। অনলাইন গান অনুসন্ধান, অনুমোদিত ডাউনলোড এবং পূর্ণ কারাওকে পরের ধাপে যোগ করা হবে।</p></div>
-  </section>
-
-  <section id="harmonium" class="page">
+  <section id="page-instrument" class="page">
     <div class="panel">
-      <h2>🎹 ভার্চুয়াল হারমোনিয়াম</h2>
-      <p class="muted">যে কোনো স্বরে চাপ দিন—ব্রাউজারে সুর তৈরি হবে। প্রথমবার শব্দ চালু করতে একটি স্বর চাপুন।</p>
+      <div class="section-head"><div><h2>ভার্চুয়াল হারমোনিয়াম</h2><p>৩৭টি কী • তিন অক্টেভ</p></div><span class="pill">শব্দ: ডিভাইসেই তৈরি</span></div>
       <div class="controls">
-        <label>সা-এর ভিত্তি
-          <select id="baseNote"><option value="C">C (সা)</option><option value="D">D (সা)</option><option value="E">E (সা)</option><option value="F">F (সা)</option><option value="G">G (সা)</option><option value="A">A (সা)</option><option value="Bb">B♭ (সা)</option></select>
+        <label>বাদ্যযন্ত্র
+          <select id="instrumentSelect">
+            <option value="harmonium">হারমোনিয়াম</option>
+            <option value="flute">বাঁশি-সদৃশ সুর</option>
+            <option value="veena">বীণা-সদৃশ সুর</option>
+          </select>
         </label>
-        <label>অক্টেভ
-          <select id="octave"><option value="3">নিচু</option><option value="4" selected>মধ্য</option><option value="5">উঁচু</option></select>
+        <label>মূল সা
+          <select id="rootSelect">
+            <option value="60">C (সা)</option><option value="61">C♯</option><option value="62">D</option><option value="63">D♯</option>
+            <option value="64">E</option><option value="65">F</option><option value="66">F♯</option><option value="67">G</option>
+            <option value="68">G♯</option><option value="69">A</option><option value="70">A♯</option><option value="71">B</option>
+          </select>
         </label>
-        <label>শব্দ
-          <select id="tone"><option value="reed">হারমোনিয়াম-ধাঁচের</option><option value="sine">মৃদু</option></select>
-        </label>
+        <label class="check-label"><input type="checkbox" id="showNames" checked> স্বরের নাম দেখাও</label>
+        <label class="volume-label">শব্দের মাত্রা <input id="volume" type="range" min="0" max="100" value="65"></label>
       </div>
-      <div id="keys" class="keys"></div>
-      <div class="sargam-line" id="lastNote">একটি স্বর বাজান</div>
-      <div class="buttonrow"><button id="playScale" class="primary">▶ সা রে গা মা অনুশীলন</button><button id="stopAudio" class="secondary">■ থামুন</button></div>
-      <p class="small muted">নোট: এটি ডিজিটাল সুর-জেনারেটর; বাস্তব হারমোনিয়ামের স্যাম্পল-শব্দ পরবর্তী সংস্করণে যোগ করা যাবে।</p>
+      <div class="octave-row"><button id="lowerOctave" class="secondary">− নিচের অক্টেভ</button><span id="octaveLabel">৩ অক্টেভ • ৩৭ কী</span><button id="higherOctave" class="secondary">উপরের অক্টেভ +</button></div>
+      <p class="hint">কী-তে ট্যাপ/ক্লিক করো। কম্পিউটারে কিবোর্ডের A–K এবং Q–U কী-ও ব্যবহার করা যাবে।</p>
+      <div id="keyboardWrap"><div id="keyboard" class="keyboard" aria-label="৩৭টি স্বরের কিবোর্ড"></div></div>
+      <div class="play-tools">
+        <button id="playScale" class="primary">▶ সা-রে-গা-মা বাজাও</button>
+        <button id="stopSound" class="secondary">■ থামাও</button>
+        <button id="playAroha" class="secondary">↑ আরোহ</button>
+        <button id="playAvaroha" class="secondary">↓ অবরোহ</button>
+      </div>
+      <p id="soundMessage" class="hint" role="status">প্রথমবার শব্দ চালাতে কোনো কী-তে একবার চাপ দাও।</p>
+    </div>
+    <div class="panel">
+      <h2>ছোট সুরের অনুশীলন</h2>
+      <div class="practice-grid">
+        <button class="practice" data-seq="0,2,4,5,7,9,11,12">সা রে গা মা পা ধা নি সা</button>
+        <button class="practice" data-seq="12,11,9,7,5,4,2,0">সা নি ধা পা মা গা রে সা</button>
+        <button class="practice" data-seq="0,4,7,12,7,4,0">সা গা পা সা পা গা সা</button>
+        <button class="practice" data-seq="0,2,0,4,2,4,5,4,2,0">অলংকার অনুশীলন</button>
+      </div>
     </div>
   </section>
 
-  <section id="learn" class="page">
-    <div class="panel"><h2>🎼 রাগ, তাল ও লয়</h2><p class="muted">শেখার জন্য প্রাথমিক তথ্য। প্রতিটি রাগের পরিবেশনা শিল্পী ও ঘরানা অনুযায়ী ভিন্ন হতে পারে।</p>
-      <div class="controls"><label>বিষয় <select id="learnType"><option value="raga">রাগ</option><option value="taal">তাল</option><option value="lay">লয়</option><option value="practice">স্বর অনুশীলন</option></select></label></div>
-      <div id="lessonList" class="lesson-list"></div>
-      <div class="panel inset"><h3>🥁 তাল অনুশীলন</h3><div class="controls"><label>তাল নির্বাচন <select id="taalSelect"><option value="teentaal">তিনতাল — ১৬ মাত্রা</option><option value="dadra">দাদরা — ৬ মাত্রা</option><option value="keherwa">কাহারবা — ৮ মাত্রা</option><option value="ektal">একতাল — ১২ মাত্রা</option></select></label><label>গতি (BPM) <input id="bpm" type="number" min="30" max="240" value="80"></label></div><div class="beat-display" id="beatDisplay">তাল শুরু করতে বোতাম চাপুন</div><div class="buttonrow"><button class="primary" id="startBeat">▶ তাল শুরু</button><button class="secondary" id="stopBeat">■ থামুন</button></div></div>
+  <section id="page-ragas" class="page hidden">
+    <div class="panel">
+      <h2>রাগের পাঠ ও শ্রবণ</h2>
+      <p>একটি রাগ বেছে নিয়ে পরিচয় পড়ো, আরোহ-অবরোহ দেখো এবং উদাহরণস্বরূপ সুর শোনো। উদাহরণগুলো শিক্ষামূলক সুর-রূপ, শিল্পীর পরিবেশনা নয়।</p>
+      <div class="rag-filter"><label>রাগ নির্বাচন <select id="ragaSelect"></select></label><button id="playRaga" class="primary">▶ রাগের উদাহরণ শোনো</button></div>
+      <div id="ragaCard" class="raga-card"></div>
+      <div class="notice"><strong>রাগ ও রাগিণী সম্পর্কে:</strong> রাগ-রাগিণীর ঐতিহাসিক পদ্ধতিতে অঞ্চল ও যুগভেদে ভিন্ন তালিকা পাওয়া যায়। তাই এখানে প্রচলিত রাগের পরিচিতি ও ঐতিহাসিক রাগ-রাগিণী ধারণা আলাদা করে শেখানো হয়েছে।</div>
+    </div>
+    <div class="panel">
+      <h2>রাগ-রাগিণী পরিচিতি</h2>
+      <details open><summary>রাগ কী?</summary><p>রাগ হলো নির্দিষ্ট স্বর, চলন, গুরুত্ব পাওয়া স্বর এবং সুরের বাক্যের মাধ্যমে গড়ে ওঠা সংগীতের একটি কাঠামো। শুধু আরোহ-অবরোহ জানলেই রাগ পুরোপুরি আয়ত্ত হয় না; রাগের চলন ও স্বরপ্রয়োগও শুনে শিখতে হয়।</p></details>
+      <details><summary>রাগিণী কী?</summary><p>পুরোনো কিছু উত্তর ভারতীয় সংগীত-গ্রন্থ ও চিত্রধারায় রাগকে পুরুষ রূপে এবং সংশ্লিষ্ট রাগকে রাগিণী রূপে কল্পনা করা হয়েছে। রাগ-রাগিণীর সংখ্যা ও সম্পর্ক সব পদ্ধতিতে এক নয়। আধুনিক হিন্দুস্তানি সংগীতে ঠাট, রাগের স্বর, চলন ও সময়ের ধারণা বেশি ব্যবহার করা হয়।</p></details>
+      <details><summary>রাগের ভাব কীভাবে বুঝব?</summary><p>ভাব বুঝতে রাগের স্বরপ্রয়োগ, গতি, বিরতি, অলংকার ও পরিবেশনার ধরন শুনতে হয়। “শান্ত”, “ভক্তিময়” বা “বিষণ্ণ” ইত্যাদি শব্দ সাধারণ পরিচায়ক; প্রত্যেক শ্রোতার অনুভূতি এক নাও হতে পারে।</p></details>
     </div>
   </section>
 
-  <section id="notebook" class="page">
-    <div class="panel"><h2>📝 আমার স্বরলিপির খাতা</h2><p class="muted">আপনার লেখা এই ডিভাইসের ব্রাউজারে সেভ হবে। নিয়মিত ব্যাকআপ রাখুন।</p>
+  <section id="page-notebook" class="page hidden">
+    <div class="panel">
+      <h2>📒 আমার স্বরলিপির খাতা</h2>
+      <p>নিজের সুর লিখে রাখো, পরে খুলে আবার বাজাও।</p>
       <form id="noteForm">
         <input type="hidden" id="noteId">
-        <label>গানের / স্বরলিপির নাম<input id="noteTitle" required maxlength="120" placeholder="যেমন: আমার নতুন গান"></label>
-        <div class="formrow"><label>ভাষা<select id="noteLanguage"><option>বাংলা</option><option>হিন্দি</option><option>ইংরেজি</option><option>শাস্ত্রীয়</option><option>অন্যান্য</option></select></label><label>রাগ / স্কেল<input id="noteRaga" placeholder="যেমন: ভূপালী / C"></label></div>
-        <label>গানের কথা ও স্বরলিপি<textarea id="noteText" rows="7" required placeholder="গানের কথা লিখুন…&#10;স্বর: সা রে গা মা | পা ধা নি সা"></textarea></label>
-        <label>তাল / লয়<input id="noteTaal" placeholder="যেমন: দাদরা, মধ্য লয়"></label>
-        <div class="buttonrow"><button class="primary" type="submit">💾 স্বরলিপি সেভ</button><button class="secondary" type="button" id="clearNote">নতুন লেখা</button></div>
+        <label>স্বরলিপির নাম<input id="noteTitle" required maxlength="80" placeholder="যেমন: আমার প্রথম সুর"></label>
+        <label>স্বরলিপি<textarea id="noteText" required rows="4" placeholder="সা রে গা মা | মা গা রে সা"></textarea></label>
+        <div class="row"><button class="primary" type="submit">💾 সেভ করো</button><button class="secondary" type="button" id="clearNote">নতুন লেখা</button></div>
       </form>
+      <div id="notesList" class="notes-list"></div>
     </div>
-    <div class="panel"><div class="section-head"><h3>সংরক্ষিত স্বরলিপি</h3><input id="noteSearch" placeholder="নাম দিয়ে খুঁজুন"></div><div id="noteList"></div></div>
   </section>
 
-  <section id="library" class="page">
-    <div class="panel"><h2>🎧 আমার গান ও রেকর্ডিং</h2><p class="muted">নিজের অডিও ফাইল যোগ করে এই ডিভাইসে চালান। ব্রাউজারের অনুমতি চাইলে মাইক্রোফোন ব্যবহারের অনুমতি দিন।</p>
-      <label class="filepick">＋ অডিও ফাইল যোগ করুন<input id="audioFiles" type="file" accept="audio/*" multiple></label>
-      <div id="audioList" class="audio-list"></div>
+  <section id="page-backup" class="page hidden">
+    <div class="panel">
+      <h2>💾 ব্যাকআপ ও রিস্টোর</h2>
+      <p>স্বরলিপি ও সেটিংস ফাইল হিসেবে রেখে দিতে পারো। অন্য ফোনে নিতে এই ফাইল কাজে লাগবে।</p>
+      <div class="row wrap"><button id="backupBtn" class="primary">⬇ ব্যাকআপ ডাউনলোড</button><label class="file-button">⬆ ব্যাকআপ ফিরিয়ে আনো<input id="restoreFile" type="file" accept=".json,application/json"></label></div>
+      <p id="backupMessage" class="hint" role="status"></p>
+      <div class="notice">ব্যাকআপ ফাইলটি নিরাপদ জায়গায় রাখবে। অ্যাপের তথ্য এই ডিভাইসের ব্রাউজারে সেভ থাকে; ব্রাউজারের ডেটা মুছে গেলে ব্যাকআপ থেকে ফিরিয়ে আনতে হবে।</div>
     </div>
-    <div class="panel"><h3>🎤 নিজের কণ্ঠ রেকর্ড</h3><p id="micStatus" class="muted">রেকর্ড করতে মাইক্রোফোন অনুমতি লাগবে। সাধারণত HTTPS বা localhost-এ কাজ করে; file:// থেকে সীমাবদ্ধতা থাকতে পারে।</p><div class="buttonrow"><button id="recordStart" class="primary">● রেকর্ড শুরু</button><button id="recordStop" class="secondary" disabled>■ রেকর্ড থামান</button></div><div id="recordings" class="audio-list"></div></div>
-    <div class="panel"><h3>🌐 অনলাইন গান</h3><p>অনলাইনে গান শোনার বা ডাউনলোড করার সুবিধা পরের ধাপে নির্ভরযোগ্য, অনুমোদিত উৎসের সঙ্গে যুক্ত করা হবে। এই সংস্করণে নিজের অডিও ফাইল যোগ করে অফলাইনে শুনতে পারবেন।</p></div>
-  </section>
-
-  <section id="backup" class="page">
-    <div class="panel"><h2>💾 ব্যাকআপ ও পুনরুদ্ধার</h2><p>স্বরলিপি ও অ্যাপের ছোট সেটিংস JSON ফাইলে রাখুন। অডিও ফাইল আলাদা করে আপনার কম্পিউটার/ফোনে রাখবেন।</p><div class="buttonrow"><button id="exportData" class="primary">⬇ ব্যাকআপ ডাউনলোড</button><label class="filepick">⬆ ব্যাকআপ ফিরিয়ে আনুন<input id="importData" type="file" accept="application/json,.json"></label></div><p id="backupStatus" class="muted"></p><div class="warning"><strong>সতর্কতা:</strong> পুনরুদ্ধার করলে বর্তমান স্বরলিপি প্রতিস্থাপিত হতে পারে। আগে ব্যাকআপ ডাউনলোড করে রাখুন।</div></div>
   </section>
 </main>
-<footer>আমার সুরের ভুবন · প্রাথমিক সংস্করণ ০.১ · আপনার সুর, আপনার খাতা</footer>
+<footer><p>🎵 আমার সুরের ভুবন • বাংলা সংগীত শেখার সহায়ক</p><p class="small">শব্দ যন্ত্রের নমুনা নয়; ব্রাউজারে তৈরি শিক্ষামূলক সুর।</p></footer>
 <script src="app.js"></script>
 </body>
 </html>
